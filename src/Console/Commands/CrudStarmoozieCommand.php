@@ -1,6 +1,6 @@
 <?php
 
-namespace Starmoozie\CRUDGenerators\Console\Commands;
+namespace Starmoozie\Generators\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
@@ -46,12 +46,15 @@ class CrudStarmoozieCommand extends Command
             'code' => "Route::crud('$lowerName', '{$name}CrudController');",
         ]);
 
-        // Create DB migration
-        \Artisan::call('make:migration create_'.strtolower($name));
-
         // Create the sidebar item
-        $this->call('starmoozie:add-sidebar-content', [
-            'code' => "<li class='nav-item'><a class='nav-link' href='{{ starmoozie_url('$lowerName') }}'><i class='nav-icon la la-question'></i> $pluralName</a></li>",
-        ]);
+        // $this->call('starmoozie:add-sidebar-content', [
+        //     'code' => "<li class='nav-item'><a class='nav-link' href='{{ starmoozie_url('$lowerName') }}'><i class='nav-icon la la-question'></i> $pluralName</a></li>",
+        // ]);
+
+        // if the application uses cached routes, we should rebuild the cache so the previous added route will
+        // be acessible without manually clearing the route cache.
+        if (app()->routesAreCached()) {
+            $this->call('route:cache');
+        }
     }
 }

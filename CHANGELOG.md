@@ -1,5 +1,8 @@
-### Changelog
+# Changelog
 
-#### 1.x-dev (2021-03-18)
+All Notable changes to `Starmoozie Generators` will be documented in this file
 
-- Initial Commit
+## 2.0.7 - 2020-03-05
+
+### Fixed
+- Initial Master;

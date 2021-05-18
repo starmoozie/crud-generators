@@ -1,6 +1,6 @@
 {
-    "name": "starmoozie/crud-generators",
-    "description": "Generate MVC for laravel project",
+    "name": "starmoozie/generators",
+    "description": "Generate files for laravel projects",
     "keywords": [
         "generators",
         "model",
@@ -8,16 +8,14 @@
         "request",
         "config"
     ],
-    "homepage": "https://github.com/starmoozie/crud-generators",
+    "homepage": "https://github.com/starmoozie/generators",
     "license": "MIT",
     "authors": [
         {
-            "name": "Starmoozie",
+            "name": "starmoozie",
             "email": "starmoozie@gmail.com"
         }
     ],
-    "prefer-stable": true,
-    "minimum-stability": "dev",
     "require": {
         "starmoozie/crud": "*"
     },
@@ -27,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Starmoozie\\CRUDGenerators\\": "src"
+            "Starmoozie\\Generators\\": "src"
         }
     },
     "scripts": {
@@ -39,7 +37,7 @@
         },
         "laravel": {
             "providers": [
-                "Starmoozie\\CRUDGenerators\\GeneratorsServiceProvider"
+                "Starmoozie\\Generators\\GeneratorsServiceProvider"
             ]
         }
     }

@@ -1,19 +1,19 @@
 <?php
 
-namespace Starmoozie\CRUDGenerators;
+namespace Starmoozie\Generators;
 
-use Starmoozie\CRUDGenerators\Console\Commands\BuildStarmoozieCommand;
-use Starmoozie\CRUDGenerators\Console\Commands\ChartStarmoozieCommand;
-use Starmoozie\CRUDGenerators\Console\Commands\ChartControllerStarmoozieCommand;
-use Starmoozie\CRUDGenerators\Console\Commands\ConfigStarmoozieCommand;
-use Starmoozie\CRUDGenerators\Console\Commands\CrudStarmoozieCommand;
-use Starmoozie\CRUDGenerators\Console\Commands\CrudControllerStarmoozieCommand;
-use Starmoozie\CRUDGenerators\Console\Commands\CrudModelStarmoozieCommand;
-use Starmoozie\CRUDGenerators\Console\Commands\CrudOperationStarmoozieCommand;
-use Starmoozie\CRUDGenerators\Console\Commands\CrudRequestStarmoozieCommand;
-use Starmoozie\CRUDGenerators\Console\Commands\ModelStarmoozieCommand;
-use Starmoozie\CRUDGenerators\Console\Commands\RequestStarmoozieCommand;
-use Starmoozie\CRUDGenerators\Console\Commands\ViewStarmoozieCommand;
+use Starmoozie\Generators\Console\Commands\BuildStarmoozieCommand;
+use Starmoozie\Generators\Console\Commands\ChartStarmoozieCommand;
+use Starmoozie\Generators\Console\Commands\ChartControllerStarmoozieCommand;
+use Starmoozie\Generators\Console\Commands\ConfigStarmoozieCommand;
+use Starmoozie\Generators\Console\Commands\CrudStarmoozieCommand;
+use Starmoozie\Generators\Console\Commands\CrudControllerStarmoozieCommand;
+use Starmoozie\Generators\Console\Commands\CrudModelStarmoozieCommand;
+use Starmoozie\Generators\Console\Commands\CrudOperationStarmoozieCommand;
+use Starmoozie\Generators\Console\Commands\CrudRequestStarmoozieCommand;
+use Starmoozie\Generators\Console\Commands\ModelStarmoozieCommand;
+use Starmoozie\Generators\Console\Commands\RequestStarmoozieCommand;
+use Starmoozie\Generators\Console\Commands\ViewStarmoozieCommand;
 use Illuminate\Support\ServiceProvider;
 
 class GeneratorsServiceProvider extends ServiceProvider

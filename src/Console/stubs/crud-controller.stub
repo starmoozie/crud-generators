@@ -19,6 +19,9 @@ class DummyClassCrudController extends CrudController
     use \Starmoozie\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Starmoozie\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
+    // Global Columns
+    use \Starmoozie\CRUD\app\Http\Controllers\Traits\GlobalColumns;
+
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
      * 
@@ -28,7 +31,7 @@ class DummyClassCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\DummyClass::class);
         CRUD::setRoute(config('starmoozie.base.route_prefix') . '/dummy_class');
-        CRUD::setEntityNameStrings('dummy_class', 'DummyTable');
+        CRUD::setEntityNameStrings('dummy_class', 'dummy_class');
     }
 
     /**
@@ -42,8 +45,10 @@ class DummyClassCrudController extends CrudController
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
+         * User CRUD::addColumn/s or $this->crud->addColumn/s
+         * - CRUD::column('price')->type('number')->label('Price');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
+         * - CRUD::addColumns([['name' => 'price', 'type' => 'number'],['name' => 'qty', 'type' => 'number']]);
          */
     }
 
@@ -60,8 +65,10 @@ class DummyClassCrudController extends CrudController
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
+         * User CRUD::addField/s or $this->crud->addField/s
+         * - CRUD::field('price')->type('number')->label('Price');
+         * - CRUD::addField(['name' => 'price', 'type' => 'number', 'label' => 'Price'])); 
+         * - CRUD::addFields([['name' => 'price', 'type' => 'number', 'label' => 'Price'],['name' => 'qty', 'type' => 'number', 'label' => 'QTY']]);
          */
     }
 
@@ -73,5 +80,26 @@ class DummyClassCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    /**
+     * Define what happens when the Show operation is loaded.
+     * 
+     * @return void
+     */
+    protected function setupShowOperation()
+    {
+        // $this->crud->set('show.setFromDb', false);
+
+        /**
+         * Columns can be defined using the fluent syntax or array/s syntax:
+         * User CRUD::addColumn/s or $this->crud->addColumn/s
+         * - CRUD::column('created_at')->type('datetime')->label('Created');
+         * - CRUD::addColumn(['name' => 'created_at', 'type' => 'datetime']); 
+         * - CRUD::addColumns([['name' => 'created_at', 'type' => 'datetime']]);
+         * 
+         * To remove column
+         * - $this->crud->removeColumn('price');
+         */
     }
 }
